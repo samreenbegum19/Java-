@@ -1,22 +1,26 @@
-class calculator
-{
-
-public int add(int n1,int n2)
-{
-
-    int r=n1+n2;
-    return r;
-}
-}
-
-class cal{
-    public static void main(String []args)
+class calculator{
+    public int add(int a,int b)
     {
-        int num1=10;
-        int num2=10;
-        calculator calc=new calculator();
-        int result=calc.add(num1,num2);
-        System.out.println(result);
+        return a+b;
+    }
+    public int add(int a,int b,int c)
+    {
+        return a+b+c;
+    }
 
+    public double add(double a,double b)
+    {
+
+        return a+b;
+    }
+}
+
+public class cal{
+    public static void main(String[]args)
+    {
+calculator calc=new calculator();
+System.out.println((calc.add(10,20)));
+System.out.println((calc.add(10,20,30)));
+System.out.println((calc.add(10,20)));
     }
 }
