@@ -1,0 +1,77 @@
+// Define a class called Human
+class Human {
+    // Instance variables (fields) for each Human object
+    private int age;
+    private String name;
+
+    // ---------------- Constructors ----------------
+
+    // 1. Default constructor (no parameters)
+    // This runs when you create a Human object without passing any values
+    public Human() {
+        age = 12;          // default age
+        name = "John";     // default name
+    }
+
+    // 2. Constructor with only 'name' parameter
+    // This lets you set the name while keeping a default age
+    public Human(String name) {
+        this.age = 0;      // default age if not provided
+        this.name = name;  // set the name from parameter
+    }
+
+    // 3. Parameterized constructor with both age and name
+    // This lets you set both values when creating the object
+    public Human(int age, String name) {
+        this.age = age;    // assign parameter 'age' to instance variable
+        this.name = name;  // assign parameter 'name' to instance variable
+    }
+
+    // ---------------- Getters and Setters ----------------
+
+    // Getter for age (returns the age value)
+    public int getAge() {
+        return age;
+    }
+
+    // Setter for age (updates the age value)
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Getter for name (returns the name value)
+    public String getName() {
+        return name;
+    }
+
+    // Setter for name (updates the name value)
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+// ---------------- Demo Class ----------------
+public class Demo {
+    public static void main(String[] args) {
+        // Create object using default constructor
+        Human obj = new Human();  
+        System.out.println(obj.getName() + " : " + obj.getAge());
+        // Output → John : 12
+
+        // Create object using parameterized constructor (age + name)
+        Human obj1 = new Human(18, "Navin");
+        System.out.println(obj1.getName() + " : " + obj1.getAge());
+        // Output → Navin : 18
+
+        // Create object using single-parameter constructor (only name)
+        Human obj2 = new Human("Reddy");
+        System.out.println(obj2.getName() + " : " + obj2.getAge());
+        // Output → Reddy : 0 (since we set default age = 0)
+
+        // Using setters to update values
+        obj.setAge(30);
+        obj.setName("Reddy");
+        System.out.println(obj.getName() + " : " + obj.getAge());
+        // Output → Reddy : 30
+    }
+}
